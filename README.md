@@ -11,8 +11,8 @@ const Developer = {
        objectKey2 : [ array2, values2, goes2, here2... ]
     }
     ACCESSING DATA IN OBJECT AS ASSOC_ARRAY :
-      this.yearsExperience.objectKey1[0]  | result is : < array1 > 
-      this.yearsExperience.objectKey2[0]  | result is : < array2 >
+      this.objectName.objectKey1[0]  | result is : < array1 > 
+      this.objectName.objectKey2[0]  | result is : < array2 >
     --------------------------------------------------
     In PHP look like
     $array = [
