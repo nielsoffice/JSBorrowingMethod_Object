@@ -1,2 +1,94 @@
 # JSBorrowingMethod_Object
 JavaScript borrowing method in object and Object as associated of array for JS
+
+```JS
+const Developer = {
+  
+  /*
+    Object or associated of array in JS 
+    objectName : {
+       objectKey1 : [ array1, values1, goes1, here1... ],
+       objectKey2 : [ array2, values2, goes2, here2... ]
+    }
+    ACCESSING DATA IN OBJECT AS ASSOC_ARRAY :
+      this.yearsExperience.objectKey1[0]  | result is : < array1 > 
+      this.yearsExperience.objectKey2[0]  | result is : < array2 >
+    --------------------------------------------------
+    In PHP look like
+    $array = [
+       'Key1' => [ 1, 2, 3 ],
+       'Key2' => [ a, b, c ]
+
+    ];
+    ACCESSING DATA IN OBJECT ARRAY :
+      $array['key1'][0] | result is :  < 1 >
+      $array['key2'][0] | result is :  < a >   */
+
+    yearsExperience : {
+
+      SKILL1 : [ 6 ],
+      SKILL2 : [ 1 ]
+
+    },
+    totalExp : function() {
+       return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]);
+    }
+
+}
+
+console.log("Total Developer Experiences are : " + Developer.totalExp());
+
+const Designer = {
+  
+ yearsExperience : {
+    SKILL1 : [ 5 ],
+    SKILL2 : [ 3 ]
+ },
+
+}
+
+/*
+  KEEP IN MIND THE BORROW METHOD ASSIGNED AND SET AS PROPERTY NOT AS FUNCTION
+  ex. 
+  CORRECT : Designer.totalExp = Developer.totalExp; 
+  WRONG : Designer.totalExp = Developer.totalExp();
+  WRONG : Designer.totalExp() = Developer.totalExp(); 
+  
+  EXECUTE BORROWING METHOD AS FUNCTION NOT AS PROPERTY ! 
+  ex. 
+  CORRECT : Designer.totalExp(); 
+  WRONG : Designer.totalExp;
+*/
+Designer.totalExp = Developer.totalExp; 
+console.log("Total Designer Experiences are : " + Designer.totalExp() );
+```
+Result:
+
+```JS
+ // Console.log result 
+ {yearsExperience: {…}, totalExp: ƒ}
+ JS1.html:46 Total Developer Experiences are : 7
+ JS1.html:40 {yearsExperience: {…}, totalExp: ƒ}
+ JS1.html:58 Total Designer Experiences are : 8
+```
+
+*Prototyping Function in Object or Object inside of Object 
+
+```JS
+const staticData = {
+  Property1 : [ (() => { 'ObjectValue_goes_here...' }) ]
+}
+
+// ALSO
+
+const staticData = {
+  Property1 : {
+    property1A : [ (() => { 'ObjectValueA_goes_here...' }) ],
+    property1B : [ (() => { 'ObjectValueB_goes_here...' }) ],
+    ...
+  },
+  Property2 : 404,
+  Property3 : 500,
+  ...
+}
+```
