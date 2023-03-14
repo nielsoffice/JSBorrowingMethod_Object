@@ -30,8 +30,8 @@ const Developer = {
       SKILL2 : [ 1 ]
 
     },
-    totalExp : function() {
-       return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]);
+    totalExp : function() { // inCaseOf having argu: function(plus1) { ... }
+       return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]) // + plus1;
     }
 
 }
@@ -61,6 +61,14 @@ const Designer = {
 */
 Designer.totalExp = Developer.totalExp; 
 console.log("Total Designer Experiences are : " + Designer.totalExp() );
+
+// OR 
+Developer.totalExp.call(Designer);
+console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer));
+
+// inCaseOfHaving argue: 
+Developer.totalExp.call(Designer, 1 );
+console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer. 1));
 ```
 Result:
 
