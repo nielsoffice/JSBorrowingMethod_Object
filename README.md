@@ -84,9 +84,9 @@ Result:
  
  // Console.log Result
  // for single argument
- Total Developer Experiences are : 17  
+ Total Developer Experiences are : 17 // <  7 + 10 = 17   >
  // for double arguments!
- Total Developer Experiences are : 48 // [ 18 + 10 + 20 = 48 ]  
+ Total Developer Experiences are : 38 // < 8 + 10 + 20 = 38  >  
 ```
 
 *Prototyping Function in Object or Object inside of Object 
