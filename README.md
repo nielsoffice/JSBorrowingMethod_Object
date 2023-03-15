@@ -69,9 +69,9 @@ Developer.totalExp.call(Designer);
 console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer));
 
 // inCaseOfHaving argue: 
-Developer.totalExp.call(Designer, 1 ); || Developer.totalExp.call(Designer, [1, 2] );
-console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer, 1));
-console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer, [1,2] ));
+Developer.totalExp.call(Designer, 10 ); || Developer.totalExp.call(Designer, [10, 20] );
+console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer, 10));
+console.log("Total Designer Experiences are : " + Developer.totalExp.call(Designer, [10,20] ));
 ```
 Result:
 
@@ -81,6 +81,12 @@ Result:
  JS1.html:46 Total Developer Experiences are : 7
  JS1.html:40 {yearsExperience: {…}, totalExp: ƒ}
  JS1.html:58 Total Designer Experiences are : 8
+ 
+ // Console.log Result
+ // for single argument
+ Total Developer Experiences are : 17  
+ // for double arguments!
+ Total Developer Experiences are : 48 // [ 18 + 10 + 20 = 48 ]  
 ```
 
 *Prototyping Function in Object or Object inside of Object 
