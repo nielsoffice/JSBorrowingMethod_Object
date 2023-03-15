@@ -31,7 +31,9 @@ const Developer = {
 
     },
     totalExp : function() { // inCaseOf having argu: function(plus1) { ... } || function(plus1, plus2) { ... }
-       return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]) // + plus1;
+      // Developer.totalExp.call(Designer, 1); : return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]) + plus1; 
+      // Developer.totalExp.call(Designer, [1, 2]); : return ((this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]) + plus1) + plus2;
+      return (this.yearsExperience.SKILL1[0] + this.yearsExperience.SKILL2[0]) // without argument!
     }
 
 }
